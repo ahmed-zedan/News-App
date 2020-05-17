@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <attr name="textColorItem" format="color" />
+    <attr name="toolbarTextSize" format="dimension" />
+    <attr name="colorBackground" format="color" />
+    <attr name="defaultPadding" format="dimension" />
+    <attr name="textSizeItem" format="dimension"/>
+    <attr name="smallPadding" format="dimension" />
+    <attr name="headerTextSize" format="dimension" />
+</resources>

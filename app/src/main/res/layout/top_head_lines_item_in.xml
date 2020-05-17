@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="data"
+            type="com.zedan.newsapp.data.entities.ResponseTopHeadLines.Article" />
+    </data>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardUseCompatPadding="true"
+        android:elevation="?attr/smallPadding"
+        app:cardCornerRadius="?attr/smallPadding">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            >
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/top_head_line_image_url"
+                loadImage="@{data.urlToImage}"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/top_head_line_title_text"
+                app:layout_constraintHorizontal_weight="0.25"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/top_head_line_title_text"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:gravity="center|start"
+                android:padding="?attr/smallPadding"
+                android:singleLine="true"
+                android:textSize="?attr/headerTextSize"
+                android:fontFamily="@font/nexa_text_bold"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:text="@{data.title, default=head}"
+                tools:text="نتارينمتابناناتانتلاب ل بيسنتاتلاسينبالمن تلسيابت"
+                app:layout_constraintBottom_toTopOf="@id/top_head_line_desc_text"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_weight="0.75"
+                app:layout_constraintStart_toEndOf="@id/top_head_line_image_url"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/top_head_line_desc_text"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:gravity="center|start"
+                android:padding="?attr/smallPadding"
+                android:maxLines="2"
+                android:ellipsize="end"
+                android:text="@{data.description, default=bodyfdsnhfhfhdsgfdshadsfjkdsfkjdsafdjsafdscschbgdskvjgvfcbkhcgbfdfsfdsfdsfdsfdashjgfhdchgsfhgdffcgfdsadhcghjchghngfnh}"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@id/top_head_line_title_text"
+                app:layout_constraintTop_toBottomOf="@id/top_head_line_title_text" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+
+</layout>

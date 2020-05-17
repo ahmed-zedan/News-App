@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.zedan.newsapp.ui.settings.SettingsViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="?attr/defaultPadding"
+        tools:context=".ui.settings.SettingsFragment">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/setting_language"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@string/language"
+            android:padding="?attr/defaultPadding"
+            android:textSize="?attr/textSizeItem"
+            android:onClick="@{()-> viewModel.languageClick()}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <View
+            style="@style/DividerLine"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/setting_language"
+
+            />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
